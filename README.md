@@ -1,5 +1,6 @@
 # What this do?
-This builds a cron script and keysend for you based on the options you choose. 
+This builds a cron script and keysend script based on the options you choose. The resulting script will automatically send sats on a recurring basis to a node of your choice.
+
 No sats are sent until you run the generated script or add it to your crontab. 
 
 # How do?
