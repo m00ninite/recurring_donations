@@ -25,6 +25,19 @@ function cancel_check(){
   fi
 }
 
+function check_app(){
+  if ! command -v $1 &> /dev/null
+  then
+      echo "A necessary dependency is missing. In order to run this script, install $1:"
+      echo "sudo apt install $1"
+      exit 1
+  fi
+}
+
+
+check_app dialog
+check_app whiptail
+
 # User select sats or dollars to denominate in.
 DENOMINATION=$(dialog --clear \
         --backtitle "Recurring Payments" \
