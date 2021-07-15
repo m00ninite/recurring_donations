@@ -38,6 +38,8 @@ function check_app(){
 check_app dialog
 check_app whiptail
 
+pip3 install -r requirements.txt
+
 # User select sats or dollars to denominate in.
 DENOMINATION=$(dialog --clear \
         --backtitle "Recurring Payments" \
@@ -110,7 +112,7 @@ cancel_check $cron_prefix
 short_node_id=$(echo $NODE_ID | cut -c 1-7)
 script_name="$script_path/_${short_node_id}_keysend.sh"
 denomination=$(echo $DENOMINATION | tr '[:upper:]' '[:lower:]')
-echo -n "/usr/bin/python $script_path/_recurringpayment.py " \
+echo -n "/usr/bin/python3 $script_path/_recurringpayment.py " \
       "--$denomination $AMOUNT " \
       "--node_id $NODE_ID " \
       > $script_name
