@@ -119,7 +119,12 @@ echo -n "/usr/bin/python3 $script_path/_recurringpayment.py " \
 chmod +x $script_name
 
 # Display crontab line
-path='$HOME/.profile; PATH=$PATH:/usr/local/bin'
+if [ $USER == "umbrel" ]; then
+  echo "Umbrel detected, adding umbrel lncli path.."
+  path='$HOME/.profile; PATH=$PATH:/usr/local/bin:/home/umbrel/umbrel/bin/'
+else
+  path='$HOME/.profile; PATH=$PATH:/usr/local/bin'
+fi
 command="$cron_prefix . $path $script_name"
 clear
 printf "No sats are being sent yet! Type 'crontab -e' to edit your crontab, then paste in the following line:\n"
