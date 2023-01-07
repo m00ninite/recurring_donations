@@ -7,7 +7,7 @@ No sats are sent until you run the generated script or add it to your crontab.
 
 * Clone this repository on your node: 
   
-```git clone https://github.com/m00ninite/recurring_donations.git .```
+```git clone https://github.com/m00ninite/recurring_donations.git```
 * Run:
   
   ```
